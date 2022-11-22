@@ -1,0 +1,34 @@
+{
+  "sources": [
+    {
+      "priority": 1,
+      "name": "JPodLocal",
+      "url": "http://localhost:5050/?sources=jpod&term={word}&reading={reading}"
+    },
+    {
+      "priority": 2,
+      "name": "JPodAltLocal",
+      "url": "http://localhost:5050/?sources=jpod_alternate&term={word}&reading={reading}"
+    },
+    {
+      "priority": 3,
+      "name": "NhkLocal",
+      "url": "http://localhost:5050/?sources=nhk16&term={word}&reading={reading}"
+    },
+    {
+      "priority": 4,
+      "name": "JPod101",
+      "url": "https://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kanji={word}&kana={reading}"
+    },
+    {
+      "priority": 5,
+      "name": "Forvo",
+      "url": "http://localhost:8770/?expression={word}&reading={reading}"
+    }
+  ],
+  "fsel": "Audio",
+  "delay_sb": 0.0,
+  "ksel": "Reading",
+  "dup_cb": 1,
+  "danger_cb": 0
+}
