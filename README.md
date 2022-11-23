@@ -3,6 +3,8 @@
 ## Overview
 An addon that generates audio in bulk from a list of URLs. Made for Anki, an SRS flashcard application.
 
+Anki addon page: https://ankiweb.net/shared/info/1156270186
+
 ## Usage
  - Open the Anki browser and select the cards that need audio
  - Go to ```Edit``` > ```Generate Bulk Audio...```, or use the shortcut ```Ctrl+Alt+B```
