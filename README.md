@@ -33,6 +33,8 @@ In this case, the ```Word```/```Expression``` field would be used in place of bo
 ## Notes
 Although this addon was initially created with Japanese cards in mind, it should also work for any other language provided that the fields and URLs are setup correctly.
 
+This addon only works for Anki versions 2.1.45 and above.
+
 ## Credits
 Credit goes to the [Batch Editing addon](https://ankiweb.net/shared/info/291119185) from which I used its code as a base template. 
 This was my first Anki addon, and I would have been extremely lost if there weren't such a similar addon to mine already created and open source.
