@@ -2,33 +2,38 @@
   "sources": [
     {
       "priority": 1,
-      "name": "JPodLocal",
-      "url": "http://localhost:5050/?sources=jpod&term={word}&reading={reading}"
+      "name": "NhkLocal",
+      "url": "http://127.0.0.1:5050/?sources=nhk16&term={word}&reading={reading}"
     },
     {
       "priority": 2,
-      "name": "JPodAltLocal",
-      "url": "http://localhost:5050/?sources=jpod_alternate&term={word}&reading={reading}"
+      "name": "SmkLocal",
+      "url": "http://127.0.0.1:5050/?sources=shinmeikai8&term={word}&reading={reading}"
     },
     {
       "priority": 3,
-      "name": "NhkLocal",
-      "url": "http://localhost:5050/?sources=nhk16&term={word}&reading={reading}"
+      "name": "ForvoLocal",
+      "url": "http://127.0.0.1:5050/?sources=forvo&term={word}&reading={reading}"
     },
     {
       "priority": 4,
-      "name": "ForvoLocal",
-      "url": "http://localhost:5050/?sources=forvo&term={word}&reading={reading}"
+      "name": "JPodLocal",
+      "url": "http://127.0.0.1:5050/?sources=jpod&term={word}&reading={reading}"
     },
     {
       "priority": 5,
+      "name": "JPodAltLocal",
+      "url": "http://127.0.0.1:5050/?sources=jpod_alternate&term={word}&reading={reading}"
+    },
+    {
+      "priority": 6,
       "name": "JPod101",
       "url": "https://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kanji={word}&kana={reading}"
     },
     {
-      "priority": 6,
+      "priority": 7,
       "name": "Forvo",
-      "url": "http://localhost:8770/?expression={word}&reading={reading}"
+      "url": "http://127.0.0.1:8770/?expression={word}&reading={reading}"
     }
   ],
   "fsel": "Audio",
