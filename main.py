@@ -120,6 +120,7 @@ class BulkGenerateDialog(QDialog):
         self.nids = nids
         self.num_sources = 0
         self.sources = []
+        self.sources_vbox = QVBoxLayout()
 
         self._setupUi()
 
@@ -183,9 +184,6 @@ class BulkGenerateDialog(QDialog):
         """
         Sets up all the UI elements in the main BulkGenerateDialog window
         """
-        self.sources_vbox = QVBoxLayout()
-        self.sources_vbox.addStretch(1)
-
         # Target audio field, Filter kana field, Delay spin box, and Duplicate check box
         flabel = QLabel("Audio field:")
         flabel.setToolTip("This specifies the field that will get REPLACED with the downloaded audio clip on every selected card")
@@ -315,15 +313,13 @@ class BulkGenerateDialog(QDialog):
         """
         Removes a source from the list of sources
         """
+        self.num_sources -= 1
         deleteItemsOfLayout(self.sources[source - 1])
         self.sources_vbox.removeItem(self.sources[source - 1])
-
-        for source_id in range(source - 1, self.num_sources):
-            self.sources[source_id].changePriorityNumber(-1)
-            self.sources_vbox.removeItem(self.sources[source_id])
-            self.sources_vbox.insertLayout(source_id, self.sources[source_id])
-
-        self.num_sources -= 1
+        for source_id in range(source + 1, self.num_sources + 2):
+            self.sources[source_id - 1].changePriorityNumber(-1)
+            self.sources_vbox.removeItem(self.sources[source_id - 1])
+            self.sources_vbox.insertLayout(source_id-1, self.sources[source_id - 1])
 
         del self.sources[source - 1]
 
@@ -342,12 +338,11 @@ class BulkGenerateDialog(QDialog):
         """
         Adds a new SourceHBox to the list of sources
         """
+        self.num_sources += 1
         source = SourceHBox(priority=self.num_sources, changePriority=self._changePriority, removeSource=self._removeSource,
                              parentDialog=self)
         self.sources.append(source)
-        self.sources_vbox.insertLayout(self.num_sources, source)
-
-        self.num_sources += 1
+        self.sources_vbox.addLayout(source)
 
     def onGenerate(self):
         """
