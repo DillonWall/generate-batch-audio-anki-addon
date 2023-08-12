@@ -91,6 +91,8 @@ def get_request(url, allow_redirects=True):
                 audio_ext = '.mp3'
             elif 'aac' in content_type:
                 audio_ext = '.aac'
+            else:
+                audio_ext = os.path.splitext(url)[1]
     payload = response.content
     response.close()
 
