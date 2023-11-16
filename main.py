@@ -59,18 +59,18 @@ class SourceHBox(QHBoxLayout):
         self.cu_textbox = QLineEdit()
         self.cu_textbox.setPlaceholderText("Enter Custom URL")
 
-        self.source_button_box = QDialogButtonBox(Qt.Horizontal, self.parentDialog)
+        self.source_button_box = QDialogButtonBox(Qt.Orientation.Horizontal, self.parentDialog)
         self.source_button_box.setMaximumWidth(60)
         self.moveup_btn = self.source_button_box.addButton("^",
-                                        QDialogButtonBox.ActionRole)
+                                        QDialogButtonBox.ButtonRole.ActionRole)
         self.moveup_btn.setToolTip("Move this source up in priority")
         self.moveup_btn.clicked.connect(lambda state, dir="up": self.changePriorityHelper(dir))
         self.movedown_btn = self.source_button_box.addButton("v",
-                                        QDialogButtonBox.ActionRole)
+                                        QDialogButtonBox.ButtonRole.ActionRole)
         self.movedown_btn.setToolTip("Move this source down in priority")
         self.movedown_btn.clicked.connect(lambda state, dir="down": self.changePriorityHelper(dir))
         self.remove_btn = self.source_button_box.addButton("X",
-                                        QDialogButtonBox.ActionRole)
+                                        QDialogButtonBox.ButtonRole.ActionRole)
         self.remove_btn.setToolTip("Remove this source")
         self.remove_btn.clicked.connect(lambda state: self.removeSourceHelper())
 
@@ -235,21 +235,21 @@ class BulkGenerateDialog(QDialog):
         button_box_hbox = QHBoxLayout()
         # button box LEFT
         button_box_vbox_left = QVBoxLayout()
-        button_box_left = QDialogButtonBox(Qt.Horizontal, self)
+        button_box_left = QDialogButtonBox(Qt.Orientation.Horizontal, self)
 
         addsource_btn = button_box_left.addButton("Add source",
-                                        QDialogButtonBox.ActionRole)
+                                        QDialogButtonBox.ButtonRole.ActionRole)
         addsource_btn.setToolTip("Add a new source")
         addsource_btn.clicked.connect(lambda state: self.addSource())
 
-        button_box_vbox_left.addWidget(button_box_left, alignment=Qt.AlignLeft)
+        button_box_vbox_left.addWidget(button_box_left, alignment=Qt.AlignmentFlag.AlignLeft)
 
         # button box RIGHT
         button_box_vbox_right = QVBoxLayout()
-        button_box_right = QDialogButtonBox(Qt.Horizontal, self)
+        button_box_right = QDialogButtonBox(Qt.Orientation.Horizontal, self)
 
         generate_btn = button_box_right.addButton("Generate",
-                                        QDialogButtonBox.ActionRole)
+                                        QDialogButtonBox.ButtonRole.ActionRole)
         generate_btn.setToolTip("Generate audio for all selected cards")
         generate_btn.clicked.connect(lambda state: self.onGenerate())
         button_box_vbox_right.addWidget(button_box_right)
@@ -268,9 +268,9 @@ class BulkGenerateDialog(QDialog):
         self.vbox_main.addLayout(self.layout_bottom)
 
         # alignment
-        self.layout_bottom.setAlignment(Qt.AlignBottom)
-        button_box_vbox_left.setAlignment(Qt.AlignLeft)
-        button_box_vbox_right.setAlignment(Qt.AlignRight)
+        self.layout_bottom.setAlignment(Qt.AlignmentFlag.AlignBottom)
+        button_box_vbox_left.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        button_box_vbox_right.setAlignment(Qt.AlignmentFlag.AlignRight)
 
         self.setLayout(self.vbox_main)
         generate_btn.setFocus()
@@ -318,8 +318,6 @@ class BulkGenerateDialog(QDialog):
         self.sources_vbox.removeItem(self.sources[source - 1])
         for source_id in range(source + 1, self.num_sources + 2):
             self.sources[source_id - 1].changePriorityNumber(-1)
-            self.sources_vbox.removeItem(self.sources[source_id - 1])
-            self.sources_vbox.insertLayout(source_id-1, self.sources[source_id - 1])
 
         del self.sources[source - 1]
 
@@ -452,7 +450,7 @@ def onBulkGenerate(browser):
         tooltip("No cards selected.")
         return
     dialog = BulkGenerateDialog(browser, nids)
-    dialog.exec_()
+    dialog.exec()
 
 
 def setupMenu(browser):
