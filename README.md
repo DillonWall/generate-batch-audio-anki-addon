@@ -30,6 +30,9 @@ Anki addon page: https://ankiweb.net/shared/info/1156270186
 
 1. [Download Anki](https://apps.ankiweb.net)
 2. In Anki, go to `Tools -> Addons -> Get Addons...` and paste the code: `1156270186`
+3. Restart Anki
+4. Open the Anki browser and select the cards that need audio
+5. Go to ```Edit``` > ```Generate Bulk Audio...```, or use the shortcut ```Ctrl+Alt+B```
 
 <div align="right">[ <a href="#contents">↑ Back to top ↑</a> ]</div>
 
