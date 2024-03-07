@@ -78,7 +78,7 @@ def get_request(url, allow_redirects=True):
             pass
         raise value_error
 
-    if not allow_redirects and response.geturl() != url:
+    if not allow_redirects and response.url != url:
         raise ValueError("Request has been redirected")
 
     content_type = response.headers.get('Content-Type', '')
@@ -92,7 +92,7 @@ def get_request(url, allow_redirects=True):
             elif 'aac' in content_type:
                 audio_ext = '.aac'
             else:
-                audio_ext = os.path.splitext(url)[1]
+                audio_ext = os.path.splitext(response.url)[1]
     payload = response.content
     response.close()
 
