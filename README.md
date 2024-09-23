@@ -58,7 +58,7 @@ This addon only works for Anki versions 2.1.45 and above.
    - Parameters ignore casing, so if your field is named ```Reading```, you may use ```{reading}``` where the reading should go in the URL
  - The ```Audio field:``` selection will determine which field on the selected cards the audio will be save to
    - Any text or audio currently in that field will be replaced if successful
- - The ```Filer kana:``` selection should be used to filter out non-hiragana characters from a field before using it
+ - The ```Filter kana:``` selection should be used to filter out non-hiragana characters from a field before using it
    - This should be set to ```(None)``` if your cards aren't Japanese
    - An example usage might be, if you are using JPod101 audio and your ```Reading``` field looks like ```私[わたし]```, the kanji and brackets would cause the word to not be found.
 Enabling Filter kana for the ```Reading``` field would instead turn it only into hiragana which would allow the word to be correctly found
