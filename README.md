@@ -15,11 +15,9 @@ Written in Python, using the requests library for handling GET API calls, and Py
 ---
 
 ## Motivation
-After finally getting my Japanese flashcards set up and getting many many hours into mining and repping vocab, I reached the point where I wanted to ensure that my pitch accent was on par with native speech, and the best way to do this would be to hear a native speak my vocab words many many times.
+After a few hundred hours into mining and repping vocab on my Japanese flashcards, I reached the point where I wanted to ensure that my pitch accent was on par with native speech. However, living outside of Japan at the time, I couldn't naturally be immersed in the language, and I needed a way to replicate this myself. 
 
-However, when I decided to make this change and add audio to all my flashcards, I quickly realized that doing this the manual way --one card at a time-- was going to take too long as I had reached over 5000 cards created already. After searching for an answer online and coming up short, I decided to create this addon so that I, and hopefully many others like me, would not have to suffer through hours of tedious work.
-
-Hopefully you, like me and the hundreds of others who have downloaded my addon, can benefit from my work!
+The way that worked best for me was to add native-recorded audio for each of my vocabulary cards in Anki, but I quickly ran into a problem. Doing this the manual way --one card at a time-- was going to take too long as I had reached over 5000 cards created already. After searching for an answer online and coming up short, I decided to create this addon so that I, and hopefully many others like me, would not have to suffer through hours of tediously searching and adding audio clips to our flashcards.
 
 <div align="right">[ <a href="#contents">↑ Back to top ↑</a> ]</div>
 
@@ -70,7 +68,7 @@ Otherwise, this may result in an IP ban if their system detects you as bot for d
    - This is very useful for cards that have, for example, the ```Word```/```Expression``` field in hiragana, and the ```Reading``` field has nothing.
 In this case, the ```Word```/```Expression``` field would be used in place of both fields
  - The ```Dangerously fast:``` checkbox will remove a 0.1 second delay between audio downloads
-   - If checked, this may results in errors, but would also be slightly faster, so please use at your own risk
+   - If checked, this may result in errors, but would also be slightly faster, so please use at your own risk
 
 <div align="right">[ <a href="#contents">↑ Back to top ↑</a> ]</div>
 
